@@ -1,3 +1,5 @@
+const BACKEND_URL = "https://e6788550-12e5-408e-b5ba-cc0dd7df37b2-00-23xaf8d4t268t.kirk.replit.dev";
+
 document.getElementById("searchBtn").addEventListener("click", async () => {
   const query = document.getElementById("song").value.trim();
   const loading = document.getElementById("loading");
@@ -12,7 +14,7 @@ document.getElementById("searchBtn").addEventListener("click", async () => {
   loading.style.display = "block";
 
   try {
-    const res = await fetch(`/api/search?q=${encodeURIComponent(query)}`);
+    const res = await fetch(`${BACKEND_URL}/api/search?q=${encodeURIComponent(query)}`);
     const data = await res.json();
     loading.style.display = "none";
 
@@ -29,7 +31,7 @@ document.getElementById("searchBtn").addEventListener("click", async () => {
         <h3>${song.title}</h3>
         <img src="${song.thumbnail}" width="200" />
         <br/>
-        <a href="/api/download?url=${encodeURIComponent(song.url)}" class="download-btn">Download</a>
+        <a href="${BACKEND_URL}/api/download?url=${encodeURIComponent(song.url)}" class="download-btn">Download</a>
       `;
 
       resultsDiv.appendChild(card);
@@ -41,9 +43,7 @@ document.getElementById("searchBtn").addEventListener("click", async () => {
   }
 });
 
-
-
-// Start animations 
+// Particle animation remains unchanged
 const canvas = document.getElementById("bgCanvas");
 const ctx = canvas.getContext("2d");
 
