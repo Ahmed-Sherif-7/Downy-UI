@@ -1,4 +1,5 @@
-const BACKEND_URL = "https://e6788550-12e5-408e-b5ba-cc0dd7df37b2-00-23xaf8d4t268t.kirk.replit.dev";
+const BACKEND_URL = "https://e76fddb1-e2ae-4f12-bfe2-86fb2bd70536-00-143d4dxjgkwkr.spock.replit.dev";
+
 
 document.getElementById("searchBtn").addEventListener("click", async () => {
   const query = document.getElementById("song").value.trim();
